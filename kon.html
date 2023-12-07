@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konseptutvikling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img class="logo" src="./bilder/drive-download-20231206T132307Z-001/IMG_1011.JPG"></a>
+        <a href="index.html"><h1>Hjem</h1></a>
+        <a href="kon.html"><h1>Konseptutvikling</h1></a>
+        <a href="prod.html"><h1>Produksjon</h1></a>
+        <a href="tek.html"><h1>Teknologi</h1></a>
+    </div>
+
+    <label for="inputText">Input Text:</label>
+    <input type="text" id="inputText" placeholder="Type something...">
+
+    <button onclick="copyText()">Copy Text</button>
+
+    <div id="outputBox"></div>
+
+    <script>
+        function copyText() {
+            let inputText = document.getElementById("inputText").value;
+            let outputBox = document.getElementById("outputBox");
+
+            // Copy text to output box
+            outputBox.innerText = inputText;
+
+            // Apply styles (you can customize these styles)
+            outputBox.style.fontFamily = "Arial, sans-serif";
+            outputBox.style.fontSize = "16px";
+            outputBox.style.backgroundColor = "#f0f0f0";
+        }
+    </script>
+</body>
+</html>
