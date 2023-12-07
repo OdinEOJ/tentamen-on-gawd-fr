@@ -77,3 +77,14 @@ body {
 .produksjonQA {
     max-width: 1000px;
 }
+#outputBox {
+    min-width: 200px;
+    min-height: 100px;
+
+    border-radius: 30px;
+    text-align: center;
+}
+
+#inputText {
+    min-width: 200px;
+}

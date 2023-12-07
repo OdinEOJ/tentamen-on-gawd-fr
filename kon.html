@@ -15,10 +15,38 @@
         <a href="tek.html"><h1>Teknologi</h1></a>
     </div>
 
-    <label for="inputText">Input Text:</label>
-    <input type="text" id="inputText" placeholder="Type something...">
+    <label for="inputText">Input Tekst:</label>
+    <input type="text" id="inputText" placeholder="Skriv noe for helvette...">
 
-    <button onclick="copyText()">Copy Text</button>
+    <button id="copyButton" onclick="copyText()">Kopier</button>
+
+    <label for="fontSizeSelect">Velg størrelse:</label>
+    <select id="fontSizeSelect" onchange="changeStyle()">
+        <option value="1px">1px</option>
+        <option value="20px" selected>20px</option>
+        <option value="200px">200px</option>
+    </select>
+
+    <label for="fontFamilySelect">Velg font:</label>
+    <select id="fontFamilySelect" onchange="changeStyle()">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="Segoe UI, sans-serif" selected>Segoe UI <3</option>
+    </select>
+
+    <label for="fontColorSelect">Velg farge:</label>
+    <select id="fontColorSelect" onchange="changeStyle()">
+        <option value="#000000">svart</option>
+        <option value="#ff0000">rød</option>
+        <option value="#0000ff">blå</option>
+    </select>
+
+    <label for="backgroundColorSelect">Velg bakgrunns farge:</label>
+    <select id="backgroundColorSelect" onchange="changeStyle()">
+        <option value="#000000" selected>svart</option>
+        <option value="#ff0000">rød</option>
+        <option value="#0000ff">blå</option>
+    </select>
 
     <div id="outputBox"></div>
 
@@ -26,15 +54,25 @@
         function copyText() {
             let inputText = document.getElementById("inputText").value;
             let outputBox = document.getElementById("outputBox");
+            let fontSizeSelect = document.getElementById("fontSizeSelect");
+            let fontFamilySelect = document.getElementById("fontFamilySelect");
+            let fontColorSelect = document.getElementById("fontColorSelect");
+            let backgroundColorSelect = document.getElementById("backgroundColorSelect");
 
-            // Copy text to output box
+
             outputBox.innerText = inputText;
 
-            // Apply styles (you can customize these styles)
-            outputBox.style.fontFamily = "Arial, sans-serif";
-            outputBox.style.fontSize = "16px";
-            outputBox.style.backgroundColor = "#f0f0f0";
+            outputBox.style.fontFamily = fontFamilySelect.value;
+            outputBox.style.fontSize = fontSizeSelect.value;
+            outputBox.style.color = fontColorSelect.value;
+            outputBox.style.backgroundColor = backgroundColorSelect.value;
         }
+
+        function changeStyle() {
+            copyText();
+        }
+
+        //Hjelp fra chatGPT i starten med fontfamily og fontsize, men så når jeg forsto hva den prøvde på så gjorde jeg resten som da er dropdown for fargene på fonten og bakgrunnen.
     </script>
 </body>
 </html>
